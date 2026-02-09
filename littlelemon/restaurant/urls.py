@@ -1,10 +1,12 @@
-from django.contrib import admin 
 from django.urls import path
-from django.shortcuts import render
 from . import views
-from .views import sayHello 
-  
-urlpatterns = [ 
-   # path('', sayHello, name='sayHello'),
-    path('', views.index, name='index')
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('book/', views.book, name='book'),
+    path('reservations/', views.reservations, name='reservations'),
+    path('bookings/', views.bookings, name='bookings'),
+    path('menu/', views.menu, name='menu'), 
+    path('menu/<int:pk>/', views.display_menu_item, name='menu_item'),
 ]

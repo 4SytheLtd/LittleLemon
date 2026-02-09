@@ -1,5 +1,8 @@
 from django.contrib import admin
-from . models import Booking, Menu
+from . models import Booking, MenuItem
 # Register your models here.
-admin.site.register(Menu)
+
 admin.site.register(Booking)
+admin.site.register(MenuItem)
+class MenuItemAdmin(admin.ModelAdmin): 
+    list_display = ('title', 'price', 'inventory')
